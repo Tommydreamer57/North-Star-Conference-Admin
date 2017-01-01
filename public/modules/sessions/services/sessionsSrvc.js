@@ -36,5 +36,10 @@ angular.module('northStarAdmin')
 
     this.getAllReviews = function () {
       return $http.get('/api/reviews')
-    }
+    };
+
+    this.getQuestions = function (sessionId) {
+      return $http.get('/api/questions' + sessionId)
+    };
+
   });

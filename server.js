@@ -19,6 +19,8 @@ app.post('/api/updateSession', dbCtrl.updateSession);
 app.post('/api/review', dbCtrl.createReview);
 app.get('/api/review/:id', dbCtrl.getReview);
 app.get('/api/reviews', dbCtrl.getAllReviews);
+app.get('/api/questions/:id', dbCtrl.getQuestion);
+app.post('/api/questions', dbCtrl.createQuestion);
 
 
 app.listen(port, () => {

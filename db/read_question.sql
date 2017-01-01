@@ -1,0 +1,1 @@
+SELECT * FROM questions where sessionId = $1

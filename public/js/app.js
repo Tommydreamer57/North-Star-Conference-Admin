@@ -1,40 +1,3 @@
-// angular.module('northStar', ['ui.router', 'ngStorage'])
-//   .config(function ($stateProvider, $urlRouterProvider) {
-//     $stateProvider
-//       .state('home', {
-//         url:'/',
-//         templateUrl: '../modules/home/home.html'
-//       })
-//       .state('sessions', {
-//         url:'/sessions',
-//         templateUrl:'../modules/sessions/views/breakouts.html',
-//         controller: 'breakoutSessionsCtrl',
-//         controllerAs: 'vm'
-//       })
-//       .state('singleBreakout', {
-//         url:'/singleBreakout/:id',
-//         templateUrl: '../modules/sessions/views/singleBreakout.html',
-//         controller: 'singleBreakoutCtrl',
-//         controllerAs: 'vm'
-//       })
-//       .state('schedule', {
-//         url:'/schedule',
-//         templateUrl: '../modules/schedule/schedule.html',
-//         controller: 'scheduleCtrl',
-//         controllerAs: 'vm'
-//       })
-//       .state('rateSession', {
-//         url: '/rateSession/:id',
-//         templateUrl: '../modules/rating/rateSession.html',
-//         controller: 'ratingCtrl',
-//         controllerAs: 'vm'
-//       });
-//
-//     $urlRouterProvider
-//       .otherwise('/')
-//   });
-
-
 'use strict';
 angular.module('northStarAdmin', ['ngRoute', 'ngCookies'])
   .config(['$routeProvider', function ($routeProvider) {
@@ -67,6 +30,10 @@ angular.module('northStarAdmin', ['ngRoute', 'ngCookies'])
       .when('/allReviews', {
         controller: 'reviewCtrl',
         templateUrl: 'modules/reviews/views/allReviews.html'
+      })
+      .when('/questions', {
+        controller: 'questionsCtrl',
+        templateUrl: 'modules/questions/views/questions.html'
       })
 
       .otherwise({ redirectTo: '/login' });

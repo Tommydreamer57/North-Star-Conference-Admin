@@ -80,6 +80,26 @@ module.exports ={
       }
       res.send(response)
     })
-  }
+  },
+
+  createQuestion: function (req, res) {
+    let question = req.body;
+    confSessionsDb.write_question([
+      question.sessionId,
+      question.question
+    ], (err, response) => {
+      if(err){
+        console.log(err);
+      }
+      res.send(response)
+    })
+
+  },
+
+  getQuestion: function (req, res) {
+    confSessionsDb.read_question([req.params.id], (err, review) => {
+      res.send(review)
+    })
+  },
 
 };
