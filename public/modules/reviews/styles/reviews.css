@@ -1,0 +1,37 @@
+.schedule-box{
+    color: #0859A6;
+
+}
+.review-content{
+    margin-top: 15px;
+}
+
+.review-page{
+    color: #0859A6;
+    margin-left: 10px;
+}
+
+.review-page-button{
+    background-color: #0859A6;
+    color: white;
+    margin-left: 10px;
+}
+
+.review-container{
+    padding: 20px;
+    border-radius: 6px;
+    background-color: #eee;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+.review-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.search-box{
+    color: #0859A6;
+}

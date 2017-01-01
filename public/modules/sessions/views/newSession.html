@@ -1,0 +1,37 @@
+<div class="alert alert-success" ng-if="creationSuccess">
+    <strong>Success!</strong> Session has been added!
+</div>
+
+<div class="alert alert-danger" ng-if="creationFailure">
+    <strong>Failure!</strong> Session not added! Please check your form and try again.
+</div>
+
+
+<div class="jumbotron">
+<form id="newSessionForm">
+    <div class="form-group">
+        <label>Session Title</label>
+        <input type="text" class="form-control" placeholder="Enter Session Title (Required)" ng-model="session.title"/>
+    </div>
+    <div class="form-group">
+        <label>Speaker</label>
+        <input type="text" class="form-control" placeholder="First and Last Name (Required)" ng-model="session.speaker"/>
+    </div>
+    <div class="form-group">
+        <label>Session Time</label>
+        <select class="form-control" ng-model="session.sessiontype">
+            <option value="" disabled selected style="display: none;">Select Session Time (Required)</option>
+            <option value="breakout 1">breakout 1</option>
+            <option value="breakout 2">breakout 2</option>
+            <option value="breakout 3">breakout 3</option>
+            <option value="breakout 4">breakout 4</option>
+            <option value="breakout 5">breakout 5</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <textarea class="form-control" rows="5" placeholder="Information about the session (Required)" ng-model="session.description"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" href="#/newSession" ng-click="addSession(session); resetForm()" ><a href="#/newSession" style="color: white;">Submit</a></button>
+</form>
+</div>

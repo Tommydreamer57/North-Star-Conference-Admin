@@ -1,0 +1,1 @@
+SELECT * FROM reviews where sessionid = $1

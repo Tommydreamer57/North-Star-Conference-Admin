@@ -1,0 +1,57 @@
+<div class="session-container">
+    <div class="session-header">
+        <h1 class="session-page">All Sessions</h1>
+        <label class="session-search-box">Search: <input ng-model="searchText"></label>
+    </div>
+
+
+    <div class="alert alert-success" ng-if="sessionRemoved">
+        <strong>Success!</strong> Session has been Removed!
+    </div>
+    <div class="alert alert-success" ng-if="sessionUpdated">
+        <strong>Success!</strong> Session has been Updated!
+    </div>
+
+    <div class="row">
+        <div class="breakout-module col-md-3" ng-repeat="session in sessions |filter: searchText | orderBy: 'sessiontype'">
+            <h4>{{session.title}}</h4>
+            <h5>{{session.speaker}}</h5>
+            <h6>{{session.sessiontype}}</h6>
+            <p>{{session.description}}</p>
+            <div class="button-container">
+                <button class="btn breakout-button btn-default btn-sm" data-toggle="modal"
+                        id="{{session.id}}, {{session.title}}" data-target="#removeSession">Remove
+                </button>
+                <a href="#/updateSession/{{session.id}}">
+                    <button class="btn breakout-button btn-default btn-sm">Update</button>
+                </a>
+                <a href="#/reviews/{{session.id}}">
+                    <button class="btn breakout-button btn-default btn-sm">Reviews</button>
+                </a>
+            </div>
+        </div><!--/row-->
+    </div>
+    <div class="modal fade" id="removeSession" tabindex="-1" role="dialog" aria-labelledby="removeSessionLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="removeSessionLabel">Are you sure you want to remove the following
+                        session? </h4>
+                </div>
+                <h3 class="modal-body sessionTitle" style="color: #0859A6">
+                </h3>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn" style="background-color: #0859A6; color: white"
+                            ng-click="removeSession(sessionId)"
+                            data-dismiss="modal">Remove
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

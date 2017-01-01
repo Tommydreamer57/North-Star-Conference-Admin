@@ -1,0 +1,34 @@
+
+
+.breakout-module{
+    padding: 20px;
+    border-radius: 6px;
+    background-color: #eee;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    height: 400px;
+    width:  400px;
+
+}
+.breakout-module, .h4{
+    color: #0859A6;
+}
+
+.session-search-box{
+    color: #0859A6;
+}
+
+.session-header{
+    color: #0859A6;
+}
+
+.button-container{
+    position: absolute;
+    bottom: 0;
+}
+.breakout-button{
+    color: #0859A6;
+    margin-bottom: 15px;
+    margin-left: 35px;
+}

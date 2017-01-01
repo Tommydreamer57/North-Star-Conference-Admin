@@ -1,0 +1,16 @@
+<div class="review-header">
+    <h1 class="review-page">All Reviews</h1>
+    <label class="search-box">Search: <input ng-model="searchText"></label>
+</div>
+
+<div class="review-container" ng-repeat="review in reviews | filter:searchText">
+    <h2 class="schedule-box">Session Title: {{review.sessiontitle}}</h2>
+    <h3 class="schedule-box">Session Speaker: {{review.sessionspeaker}}</h3>
+    <div class="review-content">
+        <h4><span class="schedule-box">Reviewer Name:</span> {{review.username}}</h4>
+        <h4><span class="schedule-box">Reviewer Email:</span> {{review.useremail}}</h4>
+        <p><span class="schedule-box">What they liked:</span> {{review.likefeedback}}</p>
+        <p><span class="schedule-box">What they Didn't LIke:</span> {{review.dislikefeedback}}</p>
+        <p><span class="schedule-box">Other Comments:</span> {{review.generalfeedback}}</p>
+    </div>
+</div>
