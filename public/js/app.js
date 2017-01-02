@@ -31,7 +31,7 @@ angular.module('northStarAdmin', ['ngRoute', 'ngCookies'])
         controller: 'reviewCtrl',
         templateUrl: 'modules/reviews/views/allReviews.html'
       })
-      .when('/questions', {
+      .when('/questions/:id', {
         controller: 'questionsCtrl',
         templateUrl: 'modules/questions/views/questions.html'
       })
