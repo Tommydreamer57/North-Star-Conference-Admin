@@ -39,7 +39,7 @@ angular.module('northStarAdmin')
     };
 
     this.getQuestions = function (sessionId) {
-      return $http.get('/api/questions' + sessionId)
+      return $http.get('/api/questions/' + sessionId)
     };
 
   });

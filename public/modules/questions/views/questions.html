@@ -2,10 +2,10 @@
     <button class="btn btn-default review-page-button pull-right">Back to All Sessions</button>
 </a>
 
-<h1 class="review-page">Reviews</h1>
+<h4 class="review-page">Questions for Session {{session.title}}</h4>
 
 <div class="review-container" ng-repeat="question in questions">
     <div class="review-content">
-        <h4><span class="schedule-box">Reviewer Name:</span> {{question.question}}</h4>
+        <h4><span class="schedule-box">Question: </span> {{question.question}}</h4>
     </div>
 </div><!--/row-->
