@@ -15,6 +15,8 @@ module.exports ={
       session.sessiontype,
       session.title,
       session.speaker,
+      session.demographic,
+      session.rooom,
       session.description
     ], (err, response) => {
       if(err){
@@ -32,6 +34,8 @@ module.exports ={
       session.sessiontype,
       session.title,
       session.speaker,
+      session.demographic,
+      session.room,
       session.description,
       session.id
     ], (err, response) => {

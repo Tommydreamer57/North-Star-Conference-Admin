@@ -1,2 +1,2 @@
-insert into confsessions (sessiontype, title, speaker, description)
-VALUES ($1, $2, $3, $4)
+insert into confsessions (sessiontype, title, speaker, demographic, room, description)
+VALUES ($1, $2, $3, $4, $5, $6)

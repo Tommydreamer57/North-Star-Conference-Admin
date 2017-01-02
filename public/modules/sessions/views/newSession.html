@@ -18,6 +18,14 @@
         <input type="text" class="form-control" placeholder="First and Last Name (Required)" ng-model="session.speaker"/>
     </div>
     <div class="form-group">
+        <label>Demographic</label>
+        <input type="text" class="form-control" placeholder="Family, Friends, Spouses, SSA... ect" ng-model="session.demographic"/>
+    </div>
+    <div class="form-group">
+        <label>Room</label>
+        <input type="text" class="form-control" placeholder="Which ever room this session will be in" ng-model="session.room"/>
+    </div>
+    <div class="form-group">
         <label>Session Time</label>
         <select class="form-control" ng-model="session.sessiontype">
             <option value="" disabled selected style="display: none;">Select Session Time (Required)</option>
