@@ -1,5 +1,6 @@
 'use strict';
 let confSessionsDb = require('./confSessionsDb');
+let moment = require('moment');
 
 module.exports ={
 
@@ -90,6 +91,7 @@ module.exports ={
     let question = req.body;
     confSessionsDb.write_question([
       question.sessionId,
+      question.timestamp =  moment.now(),
       question.question
     ], (err, response) => {
       if(err){
