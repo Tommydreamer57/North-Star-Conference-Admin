@@ -17,13 +17,14 @@ module.exports ={
       session.title,
       session.speaker,
       session.demographic,
-      session.rooom,
+      session.room,
       session.description
     ], (err, response) => {
       if(err){
         res.send("500")
       }
       else{
+        console.log(response);
         res.send("200");
       }
     });
