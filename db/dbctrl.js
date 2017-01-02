@@ -32,6 +32,7 @@ module.exports ={
 
   updateSession: function (req, res) {
     let session = req.body;
+    console.log(session);
     confSessionsDb.update_session([
       session.sessiontype,
       session.title,
@@ -43,7 +44,8 @@ module.exports ={
     ], (err, response) => {
       if(err){
         console.log(err);
-        res.send("500")
+        res.send("500");
+        console.log(err);
       }
       else{
         res.send("200");
