@@ -21,6 +21,10 @@
             <input type="text" class="form-control" placeholder="Which ever room this session will be in" ng-model="session.room"/>
         </div>
         <div class="form-group">
+            <label>Time</label>
+            <input type="text" class="form-control" placeholder="9:00 - 10:00 (Please put the dash and colons" ng-model="session.sessionTime"/>
+        </div>
+        <div class="form-group">
             <label>Session Time</label>
             <select class="form-control" ng-model="session.sessiontype">
                 <option>breakout 1</option>
@@ -32,8 +36,7 @@
         </div>
         <div class="form-group">
             <label>Description</label>
-            <textarea class="form-control" rows="10" placeholder="Information about the session"
-                      ng-model="session.description"></textarea>
+            <textarea class="form-control" rows="10" placeholder="Information about the session" ng-model="session.description"></textarea>
         </div>
         <div class="form-actions">
             <button type="submit" class="btn btn-primary" href="#/newSession" ng-click="updateSession(session); resetForm()" ><a href="#/allSessions" style="color: white;">Submit</a></button>

@@ -26,6 +26,10 @@
         <input type="text" class="form-control" placeholder="Which ever room this session will be in" ng-model="session.room"/>
     </div>
     <div class="form-group">
+        <label>Time</label>
+        <input type="text" class="form-control" placeholder="9:00 - 10:00 (Please put the dash and colons" ng-model="session.sessionTime"/>
+    </div>
+    <div class="form-group">
         <label>Session Time</label>
         <select class="form-control" ng-model="session.sessiontype">
             <option value="" disabled selected style="display: none;">Select Session Time (Required)</option>

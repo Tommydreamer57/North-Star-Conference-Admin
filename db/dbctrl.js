@@ -12,12 +12,14 @@ module.exports ={
 
   createSession: function (req, res) {
     let session = req.body;
+    console.log(session);
     confSessionsDb.write_confSession([
       session.sessiontype,
       session.title,
       session.speaker,
       session.demographic,
       session.room,
+      session.sessionTime,
       session.description
     ], (err, response) => {
       if(err){
@@ -38,9 +40,10 @@ module.exports ={
       session.title,
       session.speaker,
       session.demographic,
+			session.description,
       session.room,
-      session.description,
-      session.id
+			session.sessionTime,
+			session.id
     ], (err, response) => {
       if(err){
         console.log(err);

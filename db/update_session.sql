@@ -2,7 +2,8 @@ UPDATE confsessions
 SET sessiontype = $1,
 title = $2,
 speaker = $3,
-description = $4,
-demographic = $5,
+demographic = $4,
+description = $5,
 room = $6
-WHERE id = $7
+sessionTime = $7
+WHERE id = $8
