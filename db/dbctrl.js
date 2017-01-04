@@ -34,7 +34,6 @@ module.exports ={
 
   updateSession: function (req, res) {
     let session = req.body;
-    console.log(session);
     confSessionsDb.update_session([
       session.sessiontype,
       session.title,
@@ -42,7 +41,7 @@ module.exports ={
       session.demographic,
 			session.description,
       session.room,
-			session.sessionTime,
+			session.sessiontime,
 			session.id
     ], (err, response) => {
       if(err){
