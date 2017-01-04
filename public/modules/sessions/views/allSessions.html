@@ -12,28 +12,55 @@
         <strong>Success!</strong> Session has been Updated!
     </div>
 
+    <!--<div class="row">-->
+        <!--<div class="breakout-module col-md-3" ng-repeat="session in sessions |filter: searchText | orderBy: 'sessiontype'">-->
+            <!--<h4>{{session.title}}</h4>-->
+            <!--<h5>{{session.speaker}}</h5>-->
+            <!--<h6>{{session.sessiontype}}</h6>-->
+            <!--<p>{{session.description}}</p>-->
+            <!--<div class="button-container">-->
+                <!--<button class="btn breakout-button btn-default btn-sm" data-toggle="modal"-->
+                        <!--id="{{session.id}}, {{session.title}}" data-target="#removeSession">Remove-->
+                <!--</button>-->
+                <!--<a href="#/updateSession/{{session.id}}">-->
+                    <!--<button class="btn breakout-button btn-default btn-sm">Update</button>-->
+                <!--</a>-->
+                <!--<a href="#/reviews/{{session.id}}">-->
+                    <!--<button class="btn breakout-button btn-default btn-sm">Reviews</button>-->
+                <!--</a>-->
+                <!--<a href="#/questions/{{session.id}}">-->
+                    <!--<button class="btn breakout-button btn-default btn-sm">Questions</button>-->
+                <!--</a>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="card card-block col-md-3" ng-repeat="session in sessions | filter: searchText| orderBy: 'sessiontype'">-->
+            <!--<h4 class="card-title">{{session.title}}</h4>-->
+            <!--<h6 class="card-subtitle text-muted">{{session.speaker}}</h6>-->
+            <!--<p class="card-text">{{session.description}}</p>-->
+            <!--<a href="#/questions/{{session.id}}" class="card-link">Questions</a>-->
+            <!--<a href="#/reviews/{{session.id}}" class="card-link">Reviews</a>-->
+        <!--</div>-->
+    <!--</div>-->
+
     <div class="row">
-        <div class="breakout-module col-md-3" ng-repeat="session in sessions |filter: searchText | orderBy: 'sessiontype'">
-            <h4>{{session.title}}</h4>
-            <h5>{{session.speaker}}</h5>
-            <h6>{{session.sessiontype}}</h6>
-            <p>{{session.description}}</p>
-            <div class="button-container">
-                <button class="btn breakout-button btn-default btn-sm" data-toggle="modal"
-                        id="{{session.id}}, {{session.title}}" data-target="#removeSession">Remove
-                </button>
-                <a href="#/updateSession/{{session.id}}">
-                    <button class="btn breakout-button btn-default btn-sm">Update</button>
-                </a>
-                <a href="#/reviews/{{session.id}}">
-                    <button class="btn breakout-button btn-default btn-sm">Reviews</button>
-                </a>
-                <a href="#/questions/{{session.id}}">
-                    <button class="btn breakout-button btn-default btn-sm">Questions</button>
-                </a>
+        <div class="col-md-3" ng-repeat="session in sessions" style=" border: .5px solid gray; border-radius: 5px;">
+            <div class="card card-outline-primary">
+                <h3 class="card-title">{{session.title}}</h3>
+                <h6 class="card-subtitle text-muted">{{session.speaker}}</h6>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" style="text-transform: capitalize;">Session: {{session.sessiontype}}</li>
+                    <li class="list-group-item">Time: {{session.sessiontime}}</li>
+                    <li class="list-group-item">Demographic: {{session.demographic}}</li>
+                </ul>
+                <p class="card-text">Description: {{session.description}}</p>
+                <a href="#/updateSession/{{session.id}}" class="btn btn-primary btn-sm" style="margin: 5px">Update Session</a>
+                <a href="#/questions/{{session.id}}" class="btn btn-primary btn-sm" style="margin: 5px">Questions</a>
+                <a href="#/reviews/{{session.id}}" class="btn btn-primary btn-sm" style="margin: 5px">Reviews</a>
+                <button class="btn  btn-primary btn-sm" data-toggle="modal" id="{{session.id}}, {{session.title}}" data-target="#removeSession">Remove</button>
+
             </div>
-        </div><!--/row-->
-    </div>
+        </div>
+
     <div class="modal fade" id="removeSession" tabindex="-1" role="dialog" aria-labelledby="removeSessionLabel"
          aria-hidden="true">
         <div class="modal-dialog" role="document">
