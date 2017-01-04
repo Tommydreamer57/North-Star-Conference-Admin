@@ -94,10 +94,11 @@ module.exports ={
 
   createQuestion: function (req, res) {
     let question = req.body;
+    console.log(question);
     confSessionsDb.write_question([
       question.sessionId,
-      question.timestamp =  moment.now(),
-      question.question
+      question.question,
+      question.sessiontime = moment.now(),
     ], (err, response) => {
       if(err){
         console.log(err);
