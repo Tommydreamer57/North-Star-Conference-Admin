@@ -43,7 +43,7 @@
     <!--</div>-->
 
     <div class="row">
-        <div class="col-md-3" ng-repeat="session in sessions" style=" border: .5px solid gray; border-radius: 5px;">
+        <div class="col-md-3"  style="border: .5px solid gray; border-radius: 5px;" ng-repeat="session in sessions | orderBy: 'sessiontype'">
             <div class="card card-outline-primary">
                 <h3 class="card-title">{{session.title}}</h3>
                 <h6 class="card-subtitle text-muted">{{session.speaker}}</h6>

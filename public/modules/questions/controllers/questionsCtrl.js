@@ -6,7 +6,6 @@ angular.module('northStarAdmin')
       function getQuestions() {
         sessionsSrvc.getQuestions($routeParams.id)
           .then(result => {
-            console.log(result.data);
            questions = result.data;
            $scope.questions = questions;
           })

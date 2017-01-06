@@ -12,7 +12,7 @@
 
 
 
-<div class="review-container" ng-repeat="question in questions | orderBy: 'submissionTime'">
+<div class="review-container" ng-repeat="question in questions | orderBy: '-submissiontime'">
     <div class="review-content">
         <h4><span class="schedule-box">Question: </span> {{question.question}}</h4>
     </div>
