@@ -2,11 +2,41 @@
 let confSessionsDb = require('./confSessionsDb');
 let moment = require('moment');
 
+function mapSessions(data) {
+    let mappedSessions = [];
+    //Create Mapped array with sessionType, SessionTime, then array of sessions
+    data.map(function (session) {
+        let isMapped = mappedSessions.find(function (mappedSession) {
+            return mappedSession.sessionType === session.sessiontype;
+        });
+
+        if(!isMapped){
+            mappedSessions.push({
+                sessionType: session.sessiontype,
+                sessionTime: session.sessiontime,
+                sessions: []
+            })
+        }
+    });
+
+    //Add sessions to the session object in the mapped session.
+    data.map(function (session) {
+        let mappedSession = mappedSessions.find(function (mappedSession) {
+            return mappedSession.sessionTime === session.sessiontime;
+        });
+        if(mappedSession){
+            mappedSession.sessions.push(session);
+        }
+    });
+    return mappedSessions;
+}
+
 module.exports ={
 
   getAllSessions: function (req, res){
     confSessionsDb.read_confSessions([], (err, sessions) => {
-      res.send(sessions);
+      let mappedSessions = mapSessions(sessions);
+      res.send(mappedSessions);
     })
   },
 
