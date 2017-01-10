@@ -21,6 +21,8 @@ app.get('/api/review/:id', dbCtrl.getReview);
 app.get('/api/reviews', dbCtrl.getAllReviews);
 app.get('/api/questions/:id', dbCtrl.getQuestion);
 app.post('/api/questions', dbCtrl.createQuestion);
+app.get('/api/contact/:demographic', dbCtrl.getContact);
+app.post('api/contact', dbCtrl.createContact);
 
 
 app.listen(port, () => {
