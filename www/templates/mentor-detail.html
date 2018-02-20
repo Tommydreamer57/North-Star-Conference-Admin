@@ -1,0 +1,21 @@
+<ion-view view-title="{{mentor.name}}">
+  <ion-content class="padding has-header">
+    <div class="list card">
+      <div class="item item-body">
+        <img class="full-image" src="{{mentor.photo}}">
+        <h2 class="positive">{{mentor.name}}</h2>
+        <h4>Email: <a>{{mentor.email}}</a></h4>
+        <h4>Residence: {{mentor.residence}}</h4>
+        <h4>Marital Status: {{mentor.maritalstatus}}</h4>
+        <h4>Children: {{mentor.children}}</h4>
+        <p style="white-space: pre-line;" >
+          {{mentor.bio}}
+        </p>
+        <p class="text-center">
+          <button ng-click="sendSms(mentor.phonenumber)" class="button button-positive button-small ">Contact Me</button>
+        </p>
+      </div>
+
+    </div>
+  </ion-content>
+</ion-view>
